@@ -1,0 +1,3 @@
+# bash #
+
+This is the bash module. It provides...

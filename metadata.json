@@ -1,0 +1,13 @@
+{
+  "name": "pammer3-bash",
+  "version": "0.1.0",
+  "summary": "Manage bash",
+  "author": "Franz Pammer",
+  "description": "Install bash.\nManage environment.",
+  "dependencies": [],
+  "types": [],
+  "checksums": {},
+  "source": "git://github.com/pammer/puppet-bash.git",
+  "project_page": "https://github.com/pammer/puppet-bash",
+  "license": "Apache License, Version 2.0"
+}
