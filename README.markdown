@@ -1,3 +1,3 @@
-# bash #
+# bash Puppet Module #
 
-This is the bash module. It provides...
+Install the bash and manage the bash environment
