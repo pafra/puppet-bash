@@ -7,11 +7,12 @@ define bash::bashrc (
   $histcontrol    = $bash::params::histcontrol,
   $owner          = 'root',
   $group          = 'root',
+  $mode           = '644',
 ) {
     file { $bashrc_file: 
-    mode => 644,
-    owner => $owner,
-    group => $group,
+    mode    => 644,
+    owner   => $owner,
+    group   => $group,
     content => template($skel_template),
     require => Class["bash::install"]
   }

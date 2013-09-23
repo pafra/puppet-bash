@@ -1,5 +1,5 @@
-class bash::user::root (
-  $prompt             = $bash::params::root_prompt,
+class bash::user::skel (
+  $prompt             = $bash::params::user_prompt,
   $histcontrol        = $bash::params::histcontrol,
   $histfilesize       = $bash::params::histfilesize,
   $skel_file          = $bash::params::skel_file,
@@ -7,7 +7,7 @@ class bash::user::root (
 ) inherits bash::params {
 
 
-  bash::bashrc { "/root/.bashrc": 
+  bash::bashrc { "/etc/skel/.bashrc": 
     prompt        => "$prompt",
     histcontrol   => "$histcontrol",
     histfilesize  => "$histfilesize",
