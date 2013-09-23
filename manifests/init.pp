@@ -11,5 +11,7 @@
 # Sample Usage:
 #
 class bash {
-
+  include bash::params
+  include bash::install
+  include bash::profiles
 }
