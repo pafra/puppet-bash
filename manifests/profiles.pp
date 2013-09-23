@@ -1,4 +1,3 @@
-class bash::profiles {
-  include bash::params
+class bash::profiles inherits bash {
   include bash::profiles::defaults
 }

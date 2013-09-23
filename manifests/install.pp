@@ -1,6 +1,5 @@
-class bash::install {
-  include bash::params
-  package { $bash::params::packages:
-    ensure => latest,
+class bash::install inherits bash {
+  package { $packages:
+    ensure => $package_ensure,
   }
 }
