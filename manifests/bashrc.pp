@@ -1,4 +1,4 @@
-define bash::bashrc inherits bash::params {
+class bash::bashrc inherits bash::params {
   
   # Default for new User
   file { '/etc/skel/.bashrc': 

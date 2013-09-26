@@ -40,7 +40,7 @@ if [ "$PS1" ]; then
   fi
 
   # Bash Prompt
-<% if osfamily == "Debian" %>
+<% if @osfamily == "Debian" %>
   # set variable identifying the chroot you work in (used in the prompt below)
   if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -58,7 +58,7 @@ if [ "$PS1" ]; then
     ;;
   esac 
 <% end %>
-<% if osfamily == "RedHat" %>
+<% if @osfamily == "RedHat" %>
   case $TERM in
   xterm*|screen)
     if [ ${UID} == 0 ]; then
