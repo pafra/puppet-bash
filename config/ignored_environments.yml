@@ -1,0 +1,5 @@
+:filters:
+  - !ruby/regexp '/install$/'
+  - !ruby/regexp '/params$/'
+  - !ruby/regexp '/bashrc$/'
+  - !ruby/regexp '/profiles$/'
