@@ -1,9 +1,9 @@
 class bash::profiles::defaults inherits bash {  
-  file { $defaults_file: 
+  file { "${profile_dir}/10-knapp-defaults.sh": 
     mode => 644,
-    owner => root,
-    group => root,
-    content => template($defaults_template),
-    require => Class["bash::install"]
+    owner => 'root',
+    group => 'root',
+    source => "puppet:///modules/${module_name}/10-knapp-defaults.sh",
+    require => Class["bash::install"],
   }
 }

@@ -1,19 +1,21 @@
-define bash::bashrc (
-  $bashrc_file    = $name,
-  $prompt         = $bash::params::user_prompt,
-  $skel_template  = $bash::params::skel_template,
-  $histsize       = $bash::params::histsize,
-  $histfilesize   = $bash::params::histfilesize,
-  $histcontrol    = $bash::params::histcontrol,
-  $owner          = 'root',
-  $group          = 'root',
-  $mode           = '644',
-) {
-    file { $bashrc_file: 
-    mode    => 644,
-    owner   => $owner,
-    group   => $group,
-    content => template($skel_template),
-    require => Class["bash::install"]
+define bash::bashrc inherits bash::params {
+  
+  # Default for new User
+  file { '/etc/skel/.bashrc': 
+    mode    => '0644',
+    owner   => 'root',
+    group   => 'root',
+    content => "puppet:///modules/${module_name}/bashrc-${osfamily}.sh",
+    require => Class["bash::install"],
   }
+  
+  # User root
+  file { '/root/.bashrc': 
+    mode    => 0644,
+    owner   => 'root',
+    group   => 'root',
+    content => "puppet:///modules/${module_name}/bashrc-${osfamily}.sh",
+    require => Class["bash::install"],
+  }
+  
 }

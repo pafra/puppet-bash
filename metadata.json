@@ -1,7 +1,7 @@
 {
   "name": "pammer3-bash",
   "version": "0.1.0",
-  "summary": "Manage bash",
+  "summary": "Install and manage bash-enviroments",
   "author": "Franz Pammer",
   "description": "Install bash.\nManage environment.",
   "dependencies": [],
