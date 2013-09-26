@@ -48,10 +48,10 @@ if [ "$PS1" ]; then
 
   case $TERM in
   xterm*|screen)
-    if [ ${UID} == 0 ]; then
-      PS1='\[\e]0;${debian_chroot:+($debian_chroot)<%= @root_prompt %>'
+    if [ ${UID} == "0" ]; then
+      PS1='\[\e]0;${debian_chroot:+($debian_chroot)}<%= @root_prompt %>'
     else
-      PS1='\[\e]0;${debian_chroot:+($debian_chroot)<%= @user_prompt %>'
+      PS1='\[\e]0;${debian_chroot:+($debian_chroot)}<%= @user_prompt %>'
     fi
     ;;
   *)
@@ -61,7 +61,7 @@ if [ "$PS1" ]; then
 <% if @osfamily == "RedHat" %>
   case $TERM in
   xterm*|screen)
-    if [ ${UID} == 0 ]; then
+    if [ ${UID} == "0" ]; then
       PS1='<%= @root_prompt %>'
     else
       PS1='<%= @user_prompt %>'
